@@ -159,12 +159,14 @@ var draw = (function() {
       //Draw a rectangle
       // drawRect: function(x,y,h,w) {
       drawRect: function(){
-      ctx.strokeStyle = this.getStrokeColor();
       //Start by using random fill colors.
       ctx.fillStyle = this.getFillColor();
-      // ctx.fillStyle = '#'+Math.floor(Math.random()*16777215).toString(16);      
       ctx.fillRect (x1,y1,(x2-x1),(y2-y1));
+      // ctx.fillStyle = '#'+Math.floor(Math.random()*16777215).toString(16);      
+      ctx.strokeStyle = this.getStrokeColor();
+      ctx.beginPath();
       ctx.stroke();
+      ctx.fill();
     },
 
       //Draw a line
